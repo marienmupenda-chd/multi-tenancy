@@ -1,7 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,8 +32,8 @@ Route::domain('www.itplog.com')->group(function () {
 
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::get('/', 'HomeController@index');
+
+Route::redirect('/', 'home');
 
 // Authentication Web Routes
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
